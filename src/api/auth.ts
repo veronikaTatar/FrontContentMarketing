@@ -1,4 +1,4 @@
-// src/api/auth.ts
+
 import api from './axios';
 import type { LoginCredentials, RegisterData, AuthResponse } from '../types';
 
@@ -41,13 +41,5 @@ export const authApi = {
         return { data: response.data };
     },
 
-    // Добавляем метод uploadLogo
-    uploadLogo: async (file: File): Promise<{ data: { logoFilename: string } }> => {
-        const formData = new FormData();
-        formData.append('file', file);
-        const response = await api.post('/system-settings/upload-logo', formData, {
-            headers: { 'Content-Type': 'multipart/form-data' }
-        });
-        return { data: response.data };
-    }
+
 };

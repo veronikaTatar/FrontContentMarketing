@@ -24,7 +24,7 @@ const ContentPage = () => {
     const [error, setError] = useState<string | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // 🔥 Используем хук со стратегиями фильтрации
+    //  Используем хук со стратегиями фильтрации
     const { filters, updateFilter, resetFilters, hasActiveFilters, getQueryString } = useContentFilters();
 
     const [form, setForm] = useState({
@@ -146,7 +146,7 @@ const ContentPage = () => {
                 {error && <div className="error">{error}</div>}
             </div>
 
-            {/* 🔥 НОВАЯ СЕКЦИЯ ФИЛЬТРОВ — использует стратегии */}
+            {/*  СЕКЦИЯ ФИЛЬТРОВ — использует стратегии */}
             <div className="filters">
                 <input
                     value={filters.title}

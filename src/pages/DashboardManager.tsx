@@ -33,10 +33,10 @@ const DashboardManager: React.FC = () => {
     const [availableTasks, setAvailableTasks] = useState<Task[]>([]);
     const [groupedPosts, setGroupedPosts] = useState<GroupedPost[]>([]);
 
-    // 🔥 Состояние для нагрузки сотрудников
+    // Состояние для нагрузки сотрудников
     const [employees, setEmployees] = useState<EmployeeLoad[]>([]);
 
-    // 🔥 Состояние для каналов
+    // Состояние для каналов
     const [channels, setChannels] = useState<Channel[]>([]);
     const [editingChannelId, setEditingChannelId] = useState<number | null>(null);
     const [subscribersInput, setSubscribersInput] = useState<string>('');
@@ -61,7 +61,7 @@ const DashboardManager: React.FC = () => {
         }
     };
 
-    // 🔥 Форматирование даты
+    // Форматирование даты
     const formatDate = (date: Date | string | null): string => {
         if (!date) return '—';
         const d = typeof date === 'string' ? new Date(date) : date;
@@ -72,7 +72,7 @@ const DashboardManager: React.FC = () => {
         });
     };
 
-    // 🔥 Форматирование имени сотрудника
+    // Форматирование имени сотрудника
     const formatEmployeeName = (fullName: string): string => {
         if (!fullName || fullName === '—') return fullName;
         const parts = fullName.trim().split(/\s+/);
@@ -82,7 +82,7 @@ const DashboardManager: React.FC = () => {
         return fullName;
     };
 
-    // 🔥 Определение класса для дедлайна
+    // Определение класса для дедлайна
     const getDeadlineClass = (deadline: string | null): string => {
         if (!deadline) return '';
         const deadlineDate = new Date(deadline);
@@ -94,7 +94,7 @@ const DashboardManager: React.FC = () => {
         return '';
     };
 
-    // 🔥 Выгрузка отчета в Excel
+    // Выгрузка отчета в Excel
     const downloadEmployeeLoadReport = async () => {
         try {
             const token = localStorage.getItem('token');
@@ -120,7 +120,7 @@ const DashboardManager: React.FC = () => {
         }
     };
 
-    // 🔥 Получение общего количества подписчиков для выбранной задачи
+    // Получение общего количества подписчиков для выбранной задачи
     const getTotalSubscribersForTask = (taskId: number): number => {
         const taskChannels = new Set<number>();
         groupedPosts.forEach(post => {
@@ -180,7 +180,7 @@ const DashboardManager: React.FC = () => {
 
             setAvailableTasks(tasks);
 
-            // 🔥 Группировка по сотрудникам для диаграммы нагрузки
+
             const employeeMap = new Map<number, EmployeeLoad>();
 
             tasks.forEach((task: Task) => {
@@ -344,7 +344,7 @@ const DashboardManager: React.FC = () => {
 
             {error && <div className="error-message">{error}</div>}
 
-            {/* 🔥 СЕКЦИЯ УПРАВЛЕНИЯ ПОДПИСЧИКАМИ КАНАЛОВ */}
+            {/* СЕКЦИЯ УПРАВЛЕНИЯ ПОДПИСЧИКАМИ КАНАЛОВ */}
             <div className="stats-section">
                 <div className="section-header">
                     <h2> Каналы и подписчики</h2>
@@ -545,7 +545,7 @@ const DashboardManager: React.FC = () => {
 
 
 
-            {/* 🔥 ГОРИЗОНТАЛЬНАЯ ДИАГРАММА НАГРУЗКИ СОТРУДНИКОВ */}
+            {/* ГОРИЗОНТАЛЬНАЯ ДИАГРАММА НАГРУЗКИ СОТРУДНИКОВ */}
             <div className="stats-section">
                 <div className="section-header-with-button">
                     <h2> Нагрузка сотрудников</h2>

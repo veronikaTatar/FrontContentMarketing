@@ -188,8 +188,19 @@ const Users = () => {
             try {
                 await usersApi.delete(id);
                 await loadUsers();
+                setSuccess('Пользователь успешно удалён');
+                setTimeout(() => setSuccess(null), 3000);
             } catch (err: any) {
-                setError(err?.response?.data?.message || 'Не удалось удалить пользователя');
+                const errorMessage = err?.response?.data?.message || 'Не удалось удалить пользователя';
+                setError(errorMessage);
+
+                //  Если ошибка связана с зависимостями, показываем подсказку
+                if (errorMessage.includes('назначенные задачи') || errorMessage.includes('черновики')) {
+                    // Можно показать дополнительное уведомление
+                    setTimeout(() => {
+                        alert('💡 Совет: Вы можете заблокировать пользователя вместо удаления. Заблокированный пользователь не сможет войти в систему.');
+                    }, 500);
+                }
             }
         }
     };
@@ -274,7 +285,7 @@ const Users = () => {
             const errorMessage = err?.response?.data?.message || 'Не удалось создать пользователя';
             setError(errorMessage);
 
-            // Если ошибка связана с дубликатом логина/email
+
             if (errorMessage.includes('Login already exists')) {
                 setValidationErrors(prev => ({ ...prev, login: 'Этот логин уже занят' }));
             }

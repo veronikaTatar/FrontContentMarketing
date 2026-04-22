@@ -43,7 +43,7 @@ export const buildQueryString = (filters: Partial<FilterState>): string => {
 
         // Проверяем, что стратегия существует и значение не пустое
         if (strategy && value !== undefined && value !== null && value !== '') {
-            // 🔥 КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ: проверяем наличие метода validate через 'in' или 'validate' in strategy
+
             if ('validate' in strategy && strategy.validate) {
                 // Вызываем validate только если он существует
                 if (!strategy.validate(value as never)) {

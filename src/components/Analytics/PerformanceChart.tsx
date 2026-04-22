@@ -178,7 +178,7 @@ const PerformanceChart = ({ actualKPI, desiredKPI, title, totalSubscribers }: Pe
                 </div>
             </div>
 
-            {/* 🔥 ТОП-5 МЕТРИК ВОВЛЕЧЕННОСТИ - В ОДНУ СТРОКУ */}
+            {/*  ТОП-5 МЕТРИК ВОВЛЕЧЕННОСТИ - В ОДНУ СТРОКУ */}
             {totalSubscribers && totalSubscribers > 0 && (
                 <div className="engagement-metrics">
                     <div className="engagement-title"> Ключевые метрики вовлеченности</div>

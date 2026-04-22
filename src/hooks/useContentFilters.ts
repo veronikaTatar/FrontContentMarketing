@@ -1,9 +1,9 @@
-// src/hooks/useContentFilters.ts
+
 import { useState, useCallback, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 
-import type { FilterState } from '../strategies';  // ← type-only import для типа
+import type { FilterState } from '../strategies';
 import {
     buildQueryString,      // ← значение (функция)
     parseFiltersFromUrl    // ← значение (функция)

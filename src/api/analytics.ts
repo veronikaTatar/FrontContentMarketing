@@ -1,4 +1,4 @@
-// src/api/analytics.ts
+
 import api from './axios';
 import type { PostAnalytics, TaskPerformance, GroupedPost } from '../types';
 
@@ -7,10 +7,10 @@ export const analyticsApi = {
     create: (data: {
         idPost: number;
         actualKPI: {
-            likesCount: number;      // 🔥 Исправлено: targetLikes -> likesCount
-            viewsCount: number;      // 🔥 Исправлено
-            repostsCount: number;    // 🔥 Исправлено
-            commentsCount: number;   // 🔥 Исправлено
+            likesCount: number;
+            viewsCount: number;
+            repostsCount: number;
+            commentsCount: number;
         };
         analyticsAt?: string;
         notes?: string;
@@ -29,7 +29,7 @@ export const analyticsApi = {
     getTaskPerformance: (taskId: number) =>
         api.get<TaskPerformance>(`/post-analytics/task/${taskId}/performance`),
 
-    // 🔥 НОВЫЙ МЕТОД: получить сгруппированные опубликованные посты
+    // получить сгруппированные опубликованные посты
     getPublishedPosts: () =>
         api.get<GroupedPost[]>('/post-analytics/published-posts'),
 

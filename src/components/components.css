@@ -419,7 +419,7 @@
     color: #a0aec0;
 }
 
-/* Адаптация для мобильных устройств */
+
 @media (max-width: 768px) {
     .footer {
         padding: 32px 20px 16px;

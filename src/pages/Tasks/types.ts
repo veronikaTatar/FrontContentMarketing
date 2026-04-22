@@ -1,4 +1,4 @@
-// src/pages/Tasks/types.ts
+
 
 export const getStatusColor = (status: string): string => {
     switch (status) {

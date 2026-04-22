@@ -1,10 +1,10 @@
-﻿// src/components/Sidebar.tsx
+﻿
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../store';
 import { getMenuByRole } from '../config/menuConfig';
 
-// Импортируем все логотипы
+
 import logo1 from '../assets/logo1.png';
 import logo2 from '../assets/logo2.png';
 import logo3 from '../assets/logo3.png';
@@ -22,7 +22,7 @@ const Sidebar = () => {
     const { user, footerSettings } = useSelector((state: RootState) => state.auth);
     const menuItems = getMenuByRole(user?.role || null);
 
-    // Получаем имя файла логотипа из настроек или используем logo1.png по умолчанию
+
     const logoFilename = footerSettings?.logoFilename || 'logo1.png';
     const logoSrc = logosMap[logoFilename] || logo1;
 

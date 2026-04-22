@@ -192,7 +192,7 @@ export interface ChannelInfo {
 
 export interface GroupedPost {
     draftId: number;
-    header: string;           // 🔥 Название из TaskDraft.header
+    header: string;
     channels: ChannelInfo[];
     totalActualKPI: ActualKPI;
     hasAnalytics: boolean;
@@ -202,7 +202,7 @@ export interface PostAnalytics {
     idPostAnalytics: number;
     idPost: number;
     analyticsAt: string;
-    actualKPI: ActualKPI;     // 🔥 Исправлено
+    actualKPI: ActualKPI;
     notes: string | null;
     achievement: {
         likesPercent: number;

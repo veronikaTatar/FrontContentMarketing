@@ -90,9 +90,7 @@ const Login = () => {
     };
 
 
-    const handleGoogleLogin = () => {
-        window.location.href = 'http://localhost:8081/oauth2/authorization/google';
-    };
+
 
     const handleGitHubLogin = () => {
         // Просто переходим на OAuth2 эндпоинт Spring Security

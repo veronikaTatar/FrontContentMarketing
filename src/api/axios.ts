@@ -12,7 +12,7 @@ export interface FooterSettings {
         whatsapp: { label: string; url: string };
         discord: { label: string; url: string };
     };
-    logoFilename: string;  // только имя файла
+    logoFilename: string;
     copyrightText: string;
     copyrightLinkText: string;
     legalText: string;
@@ -53,7 +53,7 @@ const api = axios.create({
     },
 });
 
-// Добавляем токен к каждому запросу
+
 api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
     if (token) {

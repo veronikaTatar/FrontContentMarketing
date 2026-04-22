@@ -1,4 +1,4 @@
-// src/pages/Settings.tsx
+
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../store';
@@ -7,7 +7,7 @@ import type { FooterSettings } from '../api/auth';
 import { FiAlertCircle, FiCheck } from 'react-icons/fi';
 import './Settings.css';
 
-// Импортируем логотипы (как в Footer.tsx)
+
 import logo1 from '../assets/logo1.png';
 import logo2 from '../assets/logo2.png';
 import logo3 from '../assets/logo3.png';

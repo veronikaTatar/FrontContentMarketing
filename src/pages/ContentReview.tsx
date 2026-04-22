@@ -8,13 +8,15 @@ import type { Task, TaskDraft, Channel } from '../types';
 import { parseBrief } from './Tasks/types';
 import './ContentReview.css';
 
-// ==================== РАБОТА С МСК ВРЕМЕНЕМ ====================
 
-// Получить текущую дату в МСК для datetime-local input
+
 const getCurrentMskForInput = (): string => {
     const now = new Date();
-    // Добавляем 3 часа для МСК
-    const mskTime = new Date(now.getTime() + (3 * 60 * 60 * 1000));
+    const userOffset = now.getTimezoneOffset() * 60 * 1000;
+    const mskOffset = 3 * 60 * 60 * 1000;
+
+    // Текущее время в МСК
+    const mskTime = new Date(now.getTime() + userOffset + mskOffset);
 
     const year = mskTime.getFullYear();
     const month = String(mskTime.getMonth() + 1).padStart(2, '0');
@@ -26,7 +28,7 @@ const getCurrentMskForInput = (): string => {
 };
 
 // Конвертировать datetime-local значение (МСК) в ISO строку для отправки на сервер
-// Конвертировать datetime-local значение (МСК) в ISO строку для отправки на сервер
+
 const convertMskLocalToIso = (localDateTime: string): string => {
     if (!localDateTime) return '';
 
@@ -35,63 +37,53 @@ const convertMskLocalToIso = (localDateTime: string): string => {
     const [year, month, day] = datePart.split('-');
     const [hours, minutes] = timePart.split(':');
 
-    // НЕ ВЫЧИТАЕМ 3 ЧАСА - сохраняем как есть
+
     const localDate = new Date(Date.UTC(
         parseInt(year),
         parseInt(month) - 1,
         parseInt(day),
-        parseInt(hours),  // ← НЕ вычитаем 3 часа
+        parseInt(hours),
         parseInt(minutes)
     ));
 
     return localDate.toISOString();
 };
 
-// Проверить, что выбранная дата в будущем (по МСК)
+
 const isFutureMskDate = (localDateTime: string): boolean => {
     if (!localDateTime) return true;
 
+    // Разбираем введённую дату
     const [datePart, timePart] = localDateTime.split('T');
     const [year, month, day] = datePart.split('-');
     const [hours, minutes] = timePart.split(':');
 
-    // Создаем дату в МСК из введенного значения
+
     const selectedMsk = new Date(Date.UTC(
         parseInt(year),
         parseInt(month) - 1,
         parseInt(day),
-        parseInt(hours) - 3,
+        parseInt(hours),
         parseInt(minutes)
     ));
 
-    // Текущая дата в МСК
-    const now = new Date();
-    const nowMsk = new Date(now.getTime() + (3 * 60 * 60 * 1000));
+    // Текущее время в UTC
+    const nowUtc = new Date();
 
+    // Смещение для МСК (UTC+3)
+    const mskOffset = 3 * 60 * 60 * 1000;
+
+    // Текущее время в МСК
+    const nowMsk = new Date(nowUtc.getTime() + mskOffset);
+
+    // Убираем миллисекунды для чистого сравнения
     selectedMsk.setMilliseconds(0);
     nowMsk.setMilliseconds(0);
 
     return selectedMsk > nowMsk;
 };
 
-// Форматировать дату из ISO в читаемый вид (МСК)
-const formatMskDate = (isoString: string | null | undefined): string => {
-    if (!isoString) return '—';
 
-    const date = new Date(isoString);
-    // Добавляем 3 часа для отображения в МСК
-    const mskDate = new Date(date.getTime() + (3 * 60 * 60 * 1000));
-
-    return mskDate.toLocaleString('ru-RU', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
-};
-
-// ==================== КОНЕЦ РАБОТЫ С МСК ====================
 
 interface PostFormData {
     idChannels: number[];

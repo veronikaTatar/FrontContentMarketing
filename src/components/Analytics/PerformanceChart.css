@@ -120,7 +120,7 @@
     color: #ef4444;
 }
 
-/* 🔥 Стили для метрик вовлеченности */
+/* Стили для метрик вовлеченности */
 .engagement-metrics {
     margin-top: 20px;
     padding-top: 16px;
@@ -212,9 +212,9 @@
     }
 }
 
-/* DashboardManager.css - Секция каналов и подписчиков */
 
-/* 🔥 Улучшенная сетка каналов */
+
+
 .channels-subscribers-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

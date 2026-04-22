@@ -1,4 +1,4 @@
-// src/components/Footer.tsx
+
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState, AppDispatch } from '../store';
@@ -6,7 +6,7 @@ import { fetchFooterSettings } from '../store/slices/authSlice';
 import LegalModal from './LegalModal';
 import './Footer.css';
 
-// Импортируем все логотипы
+
 import logo1 from '../assets/logo1.png';
 import logo2 from '../assets/logo2.png';
 import logo3 from '../assets/logo3.png';

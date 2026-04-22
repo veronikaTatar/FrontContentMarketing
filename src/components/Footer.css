@@ -1,15 +1,13 @@
-/* src/components/Footer.css */
 
-/* Основной контейнер footer */
 .footer {
     background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
     color: #fff;
     padding: 24px 32px;
     margin-top: auto;
-    border-top: none;  /* Убираем линию */
+    border-top: none;
 }
 
-/* Контент footer - flex布局 */
+/* Контент footer */
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -40,7 +38,7 @@
     color: #ffffff;
 }
 
-/* Убираем градиент для Marketing - просто белый текст */
+
 .footer-brand .company-name .highlight {
     color: #ffffff;
     background: none;
@@ -151,16 +149,16 @@
     }
 }
 
-/* src/components/Footer.css */
+
 .footer-brand .company-name {
     font-size: 16px;
     font-weight: 700;
-    color: #ffffff;  /* Content белый */
+    color: #ffffff;
 }
 
 .footer-brand .company-name .highlight {
     background: linear-gradient(135deg, #667eea, #764ba2);
     background-clip: text;
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;  /* Marketing фиолетовый/градиент */
+    -webkit-text-fill-color: transparent;
 }

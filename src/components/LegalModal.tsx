@@ -1,4 +1,4 @@
-// src/components/LegalModal.tsx
+
 import { useEffect } from 'react';
 import './LegalModal.css';
 

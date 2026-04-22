@@ -43,6 +43,10 @@
     color: #94a3b8;
 }
 
+.close-btn:hover {
+    color: #1e293b;
+}
+
 .kpi-form-body {
     padding: 20px;
 }
@@ -145,24 +149,49 @@
     border-top: 1px solid #e2e8f0;
 }
 
+/* ✅ ИСПРАВЛЕННАЯ КНОПКА ОТМЕНЫ - как на фото */
 .btn-cancel {
-    padding: 8px 16px;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
+    padding: 10px 20px;
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    color: #475569;
+    font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
+.btn-cancel:hover {
+    background: #f8fafc;
+    border-color: #94a3b8;
+    color: #1e293b;
+}
+
+/* ✅ ИСПРАВЛЕННАЯ КНОПКА СОХРАНЕНИЯ */
 .btn-submit {
-    padding: 8px 20px;
-    background: #3b82f6;
+    padding: 10px 24px;
+    background: #6366f1;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: 500;
+    font-size: 14px;
+    transition: all 0.2s ease;
 }
 
 .btn-submit:hover {
-    background: #2563eb;
+    background: #4f46e5;
+    transform: translateY(-1px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+.btn-submit:disabled {
+    background: #a5b4fc;
+    cursor: not-allowed;
+    transform: none;
 }

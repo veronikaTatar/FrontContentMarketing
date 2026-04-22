@@ -1,4 +1,4 @@
-// src/api/tags.ts
+
 import api from './axios';
 import type { Tag, PageResponse } from '../types';
 

@@ -1,4 +1,4 @@
-﻿// src/components/Topbar.tsx
+﻿
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import type { RootState } from '../store';
