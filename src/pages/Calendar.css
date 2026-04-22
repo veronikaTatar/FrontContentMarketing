@@ -1,0 +1,346 @@
+/* src/pages/Calendar.css */
+.calendar-page {
+    padding: 24px;
+    background: #f3f4f6;
+    min-height: 100vh;
+}
+
+.calendar-header {
+    margin-bottom: 24px;
+}
+
+.calendar-header h1 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.subtitle {
+    color: #6b7280;
+    margin: 0;
+}
+
+/* Панель фильтров */
+.filters-panel {
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filters-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 180px;
+}
+
+.filter-input,
+.filter-select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.clear-filters-btn {
+    padding: 10px 16px;
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.clear-filters-btn:hover {
+    background: #e5e7eb;
+}
+
+.filters-stats {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Календарь */
+.calendar-container {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calendar-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.calendar-nav h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.nav-btn {
+    background: #f3f4f6;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn:hover:not(:disabled) {
+    background: #e5e7eb;
+}
+
+.nav-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+/* Дни недели */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.weekday {
+    padding: 12px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Сетка календаря */
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    min-height: 600px;
+}
+
+.calendar-day {
+    min-height: 120px;
+    padding: 8px;
+    border-right: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    background: white;
+}
+
+.calendar-day.empty {
+    background: #fafafa;
+}
+
+.calendar-day.has-posts {
+    background: #ffffff;
+}
+
+.day-number {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6b7280;
+    margin-bottom: 8px;
+}
+
+.calendar-day.has-posts .day-number {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* Посты в дне */
+.day-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.post-card {
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.post-card:hover {
+    transform: translateX(2px);
+}
+
+.post-card.published {
+    background: #dcfce7;
+    border-left: 3px solid #22c55e;
+}
+
+.post-card.scheduled {
+    background: #dbeafe;
+    border-left: 3px solid #3b82f6;
+}
+
+.post-time {
+    font-size: 10px;
+    font-weight: 600;
+    color: #4b5563;
+    margin-bottom: 4px;
+}
+
+.post-title {
+    font-size: 11px;
+    font-weight: 500;
+    color: #1f2937;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.post-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.post-tag {
+    font-size: 9px;
+    padding: 2px 4px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    color: #6b7280;
+}
+
+.post-tag-more {
+    font-size: 9px;
+    color: #9ca3af;
+}
+
+/* Легенда */
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 24px;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #4b5563;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.legend-color.published {
+    background: #dcfce7;
+    border-left: 3px solid #22c55e;
+}
+
+.legend-color.scheduled {
+    background: #dbeafe;
+    border-left: 3px solid #3b82f6;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .calendar-day {
+        min-height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .calendar-page {
+        padding: 16px;
+    }
+
+    .calendar-day {
+        min-height: 100px;
+        padding: 4px;
+    }
+
+    .day-number {
+        font-size: 12px;
+    }
+
+    .post-title {
+        font-size: 10px;
+    }
+
+    .post-time {
+        font-size: 9px;
+    }
+
+    .weekday {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .filters-row {
+        flex-direction: column;
+    }
+
+    .filter-group {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .calendar-day {
+        min-height: 80px;
+    }
+
+    .post-card {
+        padding: 3px 5px;
+    }
+
+    .post-title {
+        display: none;
+    }
+
+    .post-time {
+        font-size: 9px;
+        font-weight: 600;
+    }
+}

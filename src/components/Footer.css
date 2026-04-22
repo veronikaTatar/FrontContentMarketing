@@ -1,0 +1,166 @@
+/* src/components/Footer.css */
+
+/* Основной контейнер footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+    color: #fff;
+    padding: 24px 32px;
+    margin-top: auto;
+    border-top: none;  /* Убираем линию */
+}
+
+/* Контент footer - flex布局 */
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Блок с логотипом и названием */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* Название компании - обычный белый текст */
+.footer-brand .company-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+/* Убираем градиент для Marketing - просто белый текст */
+.footer-brand .company-name .highlight {
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+}
+
+/* Контакты */
+.footer-contacts {
+    display: flex;
+    gap: 24px;
+    font-size: 13px;
+}
+
+.footer-link {
+    color: #cbd5e0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.footer-link:hover {
+    color: #667eea;
+}
+
+/* Социальные сети */
+.footer-social {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-social a {
+    color: #cbd5e0;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s ease;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.footer-social a:hover {
+    color: #667eea;
+    background: rgba(102, 126, 234, 0.2);
+}
+
+/* Нижняя часть с копирайтом */
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #a0aec0;
+    margin: 0;
+}
+
+/* Ссылка на пользовательское соглашение */
+.copyright-link {
+    background: none;
+    border: none;
+    color: #667eea;
+    cursor: pointer;
+    font-size: 12px;
+    text-decoration: underline;
+    transition: color 0.2s;
+    padding: 0;
+    margin-left: 4px;
+}
+
+.copyright-link:hover {
+    color: #764ba2;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .footer {
+        padding: 20px 16px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-contacts {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        padding-top: 16px;
+        margin-top: 16px;
+    }
+}
+
+/* src/components/Footer.css */
+.footer-brand .company-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;  /* Content белый */
+}
+
+.footer-brand .company-name .highlight {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  /* Marketing фиолетовый/градиент */
+}

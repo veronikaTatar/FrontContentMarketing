@@ -1,0 +1,141 @@
+/* Стили для таблицы черновиков как в Channels */
+.drafts-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.drafts-table thead {
+    background: linear-gradient(135deg, #f5f3ff 0%, #f8fafc 100%);
+    border-bottom: 2px solid #c4b5fd;
+}
+
+.drafts-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6d28d9;
+    white-space: nowrap;
+}
+
+.drafts-table td {
+    padding: 16px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.drafts-table tbody tr:hover {
+    background: #f5f3ff;
+}
+
+/* Фиксированные ширины колонок */
+.col-title { width: 25%; }
+.col-topic { width: 10%; }
+.col-goal { width: 15%; }
+.col-priority { width: 10%; }
+.col-deadline { width: 10%; }
+.col-version { width: 8%; }
+.col-updated { width: 12%; }
+.col-actions { width: 10%; }
+
+.task-title {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.task-goal {
+    color: #64748b;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.topic-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #ede9fe;
+    color: #6d28d9;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.priority-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.priority-low {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.priority-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.priority-high {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.deadline-overdue {
+    color: #dc2626;
+    font-weight: 600;
+}
+
+.deadline-normal {
+    color: #64748b;
+}
+
+.version-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.date-text {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* Кнопки действий как в Channels */
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #e2e8f0;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+    background: #f5f3ff;
+    border-color: #a78bfa;
+    color: #6d28d9;
+    transform: translateY(-1px);
+}

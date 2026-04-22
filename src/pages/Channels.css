@@ -1,0 +1,514 @@
+/* ===== ОСНОВНЫЕ ПЕРЕМЕННЫЕ (ФИОЛЕТОВАЯ ТЕМА) ===== */
+:root {
+    --purple-50: #f5f3ff;
+    --purple-100: #ede9fe;
+    --purple-200: #ddd6fe;
+    --purple-300: #c4b5fd;
+    --purple-400: #a78bfa;
+    --purple-500: #8b5cf6;
+    --purple-600: #7c3aed;
+    --purple-700: #6d28d9;
+    --purple-800: #5b21b6;
+    --purple-900: #4c1d95;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --green-500: #10b981;
+    --green-600: #059669;
+    --red-500: #ef4444;
+    --red-600: #dc2626;
+    --amber-500: #ff647c;
+    --amber-600: #ff647c;
+}
+
+/* ===== ОБЩИЕ СТИЛИ ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f7fb;
+}
+
+.page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.page-header {
+    margin-bottom: 28px;
+}
+
+.page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--slate-800);
+    margin-bottom: 6px;
+}
+
+.muted {
+    color: var(--slate-400);
+    font-size: 14px;
+}
+
+/* ===== ПАНЕЛИ ===== */
+.panel {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--slate-200);
+}
+
+.panel h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--slate-800);
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--purple-100);
+}
+
+.panel h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--slate-800);
+    margin-bottom: 16px;
+}
+
+/* ===== ФОРМА ===== */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--slate-700);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 14px;
+    border: 1px solid var(--slate-200);
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--purple-400);
+    box-shadow: 0 0 0 3px var(--purple-100);
+}
+
+.form-group small {
+    font-size: 12px;
+    color: var(--slate-400);
+}
+
+.form-actions {
+    grid-column: span 2;
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+}
+
+/* ===== КНОПКИ ===== */
+.btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    font-weight: 600;
+}
+
+.btn.primary {
+    background: linear-gradient(135deg, var(--purple-600) 0%, var(--purple-700) 100%);
+    color: white;
+    box-shadow: 0 2px 4px rgba(124, 58, 237, 0.2);
+}
+
+.btn.primary:hover {
+    background: linear-gradient(135deg, var(--purple-700) 0%, var(--purple-800) 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(124, 58, 237, 0.25);
+}
+
+.btn.primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn.secondary {
+    background: var(--slate-100);
+    color: var(--slate-600);
+    border: 1px solid var(--slate-200);
+}
+
+.btn.secondary:hover {
+    background: var(--slate-200);
+    color: var(--slate-700);
+}
+
+/* ===== ТАБЛИЦА КАНАЛОВ ===== */
+.channels-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.channels-table thead {
+    background: linear-gradient(135deg, var(--purple-50) 0%, var(--slate-50) 100%);
+    border-bottom: 2px solid var(--purple-200);
+}
+
+.channels-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--purple-700);
+    white-space: nowrap;
+}
+
+.channels-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--slate-100);
+    vertical-align: middle;
+}
+
+.channels-table tbody tr:hover {
+    background: var(--purple-50);
+}
+
+.channels-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Фиксированные ширины колонок */
+.col-name {
+    width: 20%;
+}
+
+.col-platform {
+    width: 12%;
+}
+
+.col-id {
+    width: 22%;
+}
+
+.col-status {
+    width: 12%;
+}
+
+.col-connection {
+    width: 16%;
+}
+
+.col-actions {
+    width: 18%;
+    min-width: 140px;
+}
+
+/* Название канала */
+.channel-name {
+    font-weight: 600;
+    color: var(--slate-800);
+}
+
+/* Платформа бейдж */
+.platform-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    background: var(--purple-100);
+    color: var(--purple-700);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+/* ===== БЕЙДЖИ СТАТУСОВ ===== */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge-active {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #064e3b;
+    border: 1px solid #6ee7b7;
+}
+
+.badge-paused {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #78350f;
+    border: 1px solid #fcd34d;
+}
+
+.badge-success {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    color: #064e3b;
+    border: 1px solid #6ee7b7;
+}
+
+.badge-error {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.badge-neutral {
+    background: var(--slate-100);
+    color: var(--slate-600);
+    border: 1px solid var(--slate-200);
+}
+
+/* ===== КНОПКИ ДЕЙСТВИЙ ===== */
+.actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.btn-icon {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--slate-200);
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: var(--slate-500);
+    transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+    background: var(--purple-50);
+    border-color: var(--purple-400);
+    color: var(--purple-600);
+    transform: translateY(-1px);
+}
+
+.btn-icon.danger:hover {
+    background: #fef2f2;
+    border-color: var(--red-500);
+    color: var(--red-600);
+}
+
+.btn-icon:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===== УВЕДОМЛЕНИЯ ===== */
+.alert-banner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 20px !important;
+    border-radius: 12px !important;
+    margin-bottom: 24px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    min-height: 52px;
+    box-sizing: border-box;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-error {
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%) !important;
+    color: #991b1b !important;
+    border: 1px solid #fca5a5 !important;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%) !important;
+    color: #064e3b !important;
+    border: 1px solid #6ee7b7 !important;
+}
+
+.alert-close {
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    font-size: 20px !important;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 4px !important;
+    margin: -4px -4px -4px 12px;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.alert-close:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ===== ИНФО ПАНЕЛЬ ===== */
+.info-panel {
+    background: linear-gradient(135deg, var(--purple-50) 0%, var(--slate-50) 100%);
+    border: 1px solid var(--purple-200);
+    padding: 24px;
+    border-radius: 16px;
+    margin-top: 24px;
+}
+
+.info-section {
+    margin-bottom: 20px;
+}
+
+.info-section:last-child {
+    margin-bottom: 0;
+}
+
+.info-section h5 {
+    margin-bottom: 12px;
+    color: var(--purple-700);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.info-section ol {
+    margin-left: 20px;
+    color: var(--slate-600);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.info-section li {
+    margin-bottom: 6px;
+}
+
+.info-section li::marker {
+    color: var(--purple-500);
+    font-weight: 600;
+}
+
+/* ===== УТИЛИТЫ ===== */
+.text-center {
+    text-align: center;
+}
+
+.py-4 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 1024px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-actions {
+        grid-column: span 1;
+    }
+
+    .col-id {
+        display: none;
+    }
+
+    .channels-table th.col-id,
+    .channels-table td.col-id {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 16px;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+
+    .col-platform,
+    .col-status,
+    .col-connection {
+        display: none;
+    }
+
+    .channels-table th.col-platform,
+    .channels-table td.col-platform,
+    .channels-table th.col-status,
+    .channels-table td.col-status,
+    .channels-table th.col-connection,
+    .channels-table td.col-connection {
+        display: none;
+    }
+
+    .col-name {
+        width: 60%;
+    }
+
+    .col-actions {
+        width: 40%;
+    }
+}

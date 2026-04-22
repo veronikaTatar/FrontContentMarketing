@@ -1,0 +1,166 @@
+/* ========== ОШИБКИ ВАЛИДАЦИИ ========== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.input-group input {
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-group input.error-input {
+    border-color: #dc2626;
+    background-color: #fef2f2;
+}
+
+.input-group input.error-input:focus {
+    border-color: #dc2626;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.field-error {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #dc2626;
+    margin-top: 4px;
+}
+
+.field-error svg {
+    flex-shrink: 0;
+}
+
+/* ========== ОСНОВНАЯ ОШИБКА ========== */
+.error-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.error-auth {
+    background: #fef2f2;
+    border-left: 3px solid #dc2626;
+}
+
+.error-network {
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+}
+
+.error-icon {
+    flex-shrink: 0;
+}
+
+.error-auth .error-icon {
+    color: #dc2626;
+}
+
+.error-network .error-icon {
+    color: #f59e0b;
+}
+
+.error-content {
+    flex: 1;
+}
+
+.error-title {
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.error-auth .error-title {
+    color: #991b1b;
+}
+
+.error-network .error-title {
+    color: #92400e;
+}
+
+.error-description {
+    font-size: 12px;
+    color: #666;
+}
+
+/* ========== КНОПКА ВХОДА ========== */
+.login-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 8px;
+}
+
+.login-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.login-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.oauth-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.oauth-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #e0e0e0;
+    background: white;
+    color: #333;
+}
+
+.oauth-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.google-btn:hover {
+    border-color: #4285f4;
+    background: #f8f9ff;
+}
+
+.github-btn:hover {
+    border-color: #333;
+    background: #f5f5f5;
+}

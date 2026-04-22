@@ -1,0 +1,444 @@
+.performance-chart {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.chart-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.metrics-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.metric-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.metric-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+}
+
+.metric-icon {
+    font-size: 16px;
+}
+
+.metric-values {
+    margin-left: auto;
+    font-size: 12px;
+    color: #64748b;
+    font-weight: normal;
+}
+
+.progress-bar-container {
+    background: #e2e8f0;
+    border-radius: 20px;
+    height: 28px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    transition: width 0.3s ease;
+}
+
+.progress-bar.excellent {
+    background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+.progress-bar.good {
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+.progress-bar.average {
+    background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.progress-bar.poor {
+    background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+.progress-percent {
+    font-size: 11px;
+    font-weight: 600;
+    color: white;
+}
+
+.overall-performance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.overall-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.overall-percent {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.overall-percent.excellent {
+    color: #10b981;
+}
+
+.overall-percent.good {
+    color: #3b82f6;
+}
+
+.overall-percent.average {
+    color: #f59e0b;
+}
+
+.overall-percent.poor {
+    color: #ef4444;
+}
+
+/* 🔥 Стили для метрик вовлеченности */
+.engagement-metrics {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 2px solid #e2e8f0;
+}
+
+.engagement-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.engagement-row {
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.engagement-card {
+    flex: 1;
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 10px 8px;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    min-width: 0; /* Для корректного сжатия */
+}
+
+.engagement-card.highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.engagement-card.highlight .engagement-label,
+.engagement-card.highlight .engagement-hint {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.engagement-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #64748b;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.engagement-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+.engagement-card.highlight .engagement-value {
+    color: white;
+}
+
+.engagement-hint {
+    font-size: 9px;
+    color: #94a3b8;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Адаптивность для маленьких экранов */
+@media (max-width: 600px) {
+    .engagement-row {
+        flex-wrap: wrap;
+    }
+
+    .engagement-card {
+        flex: 1 1 calc(50% - 4px);
+        min-width: calc(50% - 4px);
+    }
+}
+
+@media (max-width: 400px) {
+    .engagement-card {
+        flex: 1 1 100%;
+    }
+}
+
+/* DashboardManager.css - Секция каналов и подписчиков */
+
+/* 🔥 Улучшенная сетка каналов */
+.channels-subscribers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 12px;
+}
+
+/* Карточка канала */
+.channel-subscriber-card {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.channel-subscriber-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+/* Информация о канале */
+.channel-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.platform-icon {
+    font-size: 24px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.platform-icon.telegram {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+}
+
+.platform-icon.discord {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+}
+
+.channel-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: #1e293b;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Отображение подписчиков */
+.subscriber-display {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.subscriber-count {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+.subscriber-label {
+    font-size: 13px;
+    color: #64748b;
+    margin-left: 4px;
+}
+
+.btn-edit {
+    background: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    color: #64748b;
+    transition: all 0.2s;
+    margin-left: auto;
+}
+
+.btn-edit:hover {
+    background: #f1f5f9;
+    border-color: #3b82f6;
+    color: #3b82f6;
+}
+
+/* Редактирование подписчиков */
+.subscriber-edit {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+.subscriber-edit input {
+    flex: 1;
+    padding: 8px 10px;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    min-width: 0;
+    background: white;
+}
+
+.subscriber-edit input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.btn-save,
+.btn-cancel {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.btn-save {
+    background: #10b981;
+    color: white;
+}
+
+.btn-save:hover {
+    background: #059669;
+}
+
+.btn-cancel {
+    background: #f1f5f9;
+    color: #64748b;
+    border: 1px solid #e2e8f0;
+}
+
+.btn-cancel:hover {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+/* Заголовок секции */
+.section-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+
+
+.section-header h2::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 4px;
+}
+
+/* Контейнер секции */
+.stats-section {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .channels-subscribers-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .channel-subscriber-card {
+        padding: 14px;
+    }
+
+    .stats-section {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subscriber-display {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn-edit {
+        margin-left: 0;
+        align-self: flex-end;
+    }
+
+    .subscriber-edit {
+        flex-wrap: wrap;
+    }
+
+    .subscriber-edit input {
+        width: 100%;
+    }
+}
